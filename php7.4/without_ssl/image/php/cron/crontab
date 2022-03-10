@@ -1,4 +1,2 @@
-*/5 3-18 * * * root /usr/local/bin/php /var/www/html/artisan sms:bulk-worker >> /var/log/crontab.log 2>&1
-*/5 * * * * root /usr/local/bin/php /var/www/html/artisan sms:status-worker >> /var/log/crontab.log 2>&1
-*/5 * * * * root /usr/local/bin/php /var/www/html/artisan email:status-worker >> /var/log/crontab.log 2>&1
+
 
