@@ -6,6 +6,7 @@ services:
         restart: unless-stopped
         volumes:
             - .:/var/www/html
+        entrypoint: sh -c "/var/www/html/image/entrypoint.sh"
 
     nginx:
         image: nginx:latest

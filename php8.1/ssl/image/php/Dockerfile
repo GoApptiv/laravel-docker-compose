@@ -18,6 +18,4 @@ ADD cron/crontab /etc/cron.d/cron
 RUN chmod 0644 /etc/cron.d/cron
 RUN touch /var/log/crontab.log
 
-CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
-
 WORKDIR /var/www
