@@ -17,7 +17,24 @@ then
     echo "\$GCP_NOTIFIER_SLACK_CHANNEL_WEBHOOK.txt is set empty, please set it to receive server notification in slack channel."
 else
     echo "Sending slack notification"
-    curl -X POST -H 'Content-type: application/json' --data '{"text":"#################################\n\n\n   Server Restart complete!    \n\n\n#################################"}' $slack_webhook
+    curl -X POST -H 'Content-type: application/json' --data '{
+    "blocks": [
+        {
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": "VM Docker Container 📦"
+            }
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "Container restarted successfully! ✅"
+            }
+        }
+    ]
+}' $slack_webhook
 fi
 
 # Running the supervisor to start the application
